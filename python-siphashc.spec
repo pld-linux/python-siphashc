@@ -4,22 +4,18 @@
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
-# NOTES:
-# - 'module' should match the Python import path (first component?)
-# - 'egg_name' should equal to Python egg name
-# - 'pypi_name' must match the Python Package Index name
 %define		module		siphashc
-%define		egg_name	siphashc3
-%define		pypi_name	siphashc3
+%define		egg_name	siphashc
+%define		pypi_name	siphashc
 Summary:	Python module for siphash
 Name:		python-%{pypi_name}
-Version:	3
+Version:	0.8
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/s/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
-# Source0-md5:	b86856858e1f24a7288248f2f45e7c40
-URL:		http://github.com/carlopires/siphashc3
+# Source0-md5:	f2078b9c12d4650a67ad29ab4c63d8cc
+URL:		https://github.com/WeblateOrg/siphashc
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
@@ -31,6 +27,7 @@ BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools
 %endif
 Requires:	python-modules
+Obsoletes:	python-siphashc3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,6 +37,7 @@ Python module for siphash, based on floodberry's version.
 Summary:	Python module for siphash
 Group:		Libraries/Python
 Requires:	python3-modules
+Obsoletes:	python3-siphashc3
 
 %description -n python3-%{pypi_name}
 Python module for siphash, based on floodberry's version.
