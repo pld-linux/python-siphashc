@@ -10,7 +10,7 @@
 Summary:	Python module for siphash
 Name:		python-%{pypi_name}
 Version:	0.8
-Release:	3
+Release:	4
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/s/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
